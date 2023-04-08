@@ -12,6 +12,8 @@ namespace CarInventory
         public int mileage;
 
         private int price;
+        private int  total = 0;
+        private int delivery = 500;
 
         //include a default constructor in all classes
         public Car()
@@ -38,6 +40,18 @@ namespace CarInventory
         public int GetPrice()
         {
             return price;
+        }
+
+        public void ShowStickerPrice()
+        {
+            total = price + delivery;
+
+            Console.Clear();
+            Console.WriteLine("**************************");
+            Console.WriteLine($"{make} - {year}\n");
+            Console.WriteLine($"Base Price:        {price.ToString("C")}");
+            Console.WriteLine($"Delivery Fee       {delivery.ToString("C")}");
+            Console.WriteLine($"Total Price        {total.ToString("C")}\n");
         }
     }
 }

@@ -60,33 +60,34 @@ namespace CarInventory
 
         static void AddCar()
         {
-            //Car newCar = new Car("2010", "Ferrari", 50);
-            //cars.Add(newCar);
-
-            //Car newCar2 = new Car("2023", "VW GTI", 500);
-            //cars.Add(newCar2);
-
-            string year, make;
-            int mileage;
-
-            Console.Write("Enter a year: ");
-            year = Console.ReadLine();
-
-            Console.Write("Enter a make: ");
-            make = Console.ReadLine();
-
-            Console.Write("Enter a mileage: ");
-            mileage = Convert.ToInt32(Console.ReadLine());
-
-            Car newCar = new Car(year, make, mileage);
+            Car newCar = new Car("2010", "Ferrari", 50);
             cars.Add(newCar);
+
+            Car newCar2 = new Car("2023", "VW GTI", 500);
+            cars.Add(newCar2);
+
+            //string year, make;
+            //int mileage;
+
+            //Console.Write("Enter a year: ");
+            //year = Console.ReadLine();
+
+            //Console.Write("Enter a make: ");
+            //make = Console.ReadLine();
+
+            //Console.Write("Enter a mileage: ");
+            //mileage = Convert.ToInt32(Console.ReadLine());
+
+            //Car newCar = new Car(year, make, mileage);
+            //cars.Add(newCar);
         }
 
         static void DisplayCars()
         {
             foreach (Car c in cars)
             {
-                Console.WriteLine($"{c.year} {c.make} - {c.mileage}km, {c.GetPrice()}");
+                //Console.WriteLine($"{c.year} {c.make} - {c.mileage}km, {c.GetPrice()}");
+                Console.WriteLine($"{c.year} {c.make} - {c.mileage}km");
             }
 
             Console.WriteLine("Press any key to continue");
@@ -152,7 +153,9 @@ namespace CarInventory
                 newPrice = Convert.ToInt32(Console.ReadLine());
 
                 cars[index].SetPrice(newPrice);
-                Console.WriteLine($"{cars[index].make} is {cars[index].GetPrice()}");
+                //Console.WriteLine($"{cars[index].make} is {cars[index].GetPrice()}");
+
+                cars[index].ShowStickerPrice();
             }
             else
             {
